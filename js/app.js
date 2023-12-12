@@ -2,6 +2,12 @@ function comprar() {
     let tipoIngresso = document.getElementById('tipo-ingresso');
     let quantidade = parseInt(document.getElementById('qtd').value);
 
+    // Verificar se a quantidade é um número positivo
+    if (isNaN(quantidade) || quantidade <= 0) {
+        alert('Por favor, insira uma quantidade válida.');
+        return;
+    }
+
     if (tipoIngresso.value == 'pista') {
         comprarPista(quantidade);
     } else if (tipoIngresso.value == 'superior') {
